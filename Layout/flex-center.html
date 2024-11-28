@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Center</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /*
+            在弹性布局或网格布局中使用自动外边距
+            可以轻松地将元素居中
+            在FFC或GFC中使用margin:auto，在通过justify-content和align-items属性进行对齐之前
+            任何处于空闲的空间会被分配到该方向的自动margin上
+        */
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background-color: skyblue;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        /* 使用margin-top:auto，将元素推到容器的顶部 */
+        /* margin-top: auto; */
+        /* 使用margin-bottom:auto，将元素推到容器的底部 */
+        /* margin-bottom: auto; */
+        /* 使用margin-left:auto，将元素推到容器的右侧 */
+        /* margin-left: auto; */
+        /* 使用margin-right:auto，将元素推到容器的左侧 */
+        /* margin-right: auto; */
+        /* 使用margin:auto，将元素水平垂直居中 */
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Item 1</div>
+    </div>
+  </body>
+</html>

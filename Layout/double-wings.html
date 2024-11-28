@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>双飞翼布局</title>
+    <style>
+      /*
+        双飞翼布局左中右三列布局，渲染顺序中间列书写在前保证提前渲染，左右两列定宽，中间列自适应剩余宽度。
+      */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+
+        & > div {
+          height: 100vh;
+          float: left;
+          line-height: 100vh;
+          text-align: center;
+          font-size: 3vw;
+        }
+
+        & .center {
+          background-color: skyblue;
+          width: 100%;
+
+          & .center-inner {
+            margin: 0 200px;
+          }
+        }
+
+        & .left {
+          background-color: pink;
+          margin-left: -100%;
+          width: 200px;
+        }
+
+        & .right {
+          background-color: lightgreen;
+          width: 200px;
+          margin-left: -200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+        <div class="center-inner">中间列</div>
+      </div>
+      <div class="left">左侧列</div>
+      <div class="right">右侧列</div>
+    </div>
+  </body>
+</html>
