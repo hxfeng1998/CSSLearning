@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid 布局配合 clip-path 实现 GTA5 封面</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        background: #23232a;
+      }
+      .container {
+        padding: 0.8rem;
+        background: black;
+        height: 95vh;
+        min-height: 500px;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        margin-top: 2.5vh;
+        border: 1px solid #c9b473;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 0.7fr 0.3fr 1fr;
+        grid-template-rows: 20% 40% 20% 20%;
+
+        & div {
+          width: 100%;
+        }
+
+        & div:nth-child(-n + 3) {
+          img {
+            width: 120%;
+            height: 120%;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 70% 20%;
+        transition: 0.25s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(120%);
+        }
+      }
+
+      .one {
+        grid-area: 1 / 1 / 2 / 2;
+        clip-path: polygon(0% 0%, 93.24% 0%, 105.04% 110.16%, 0% 90%);
+      }
+
+      .two {
+        grid-area: 1 / 2 / 2 / 4;
+        clip-path: polygon(0% 0%, 108% 0%, 96% 110%, 10% 110%);
+      }
+
+      .three {
+        grid-area: 1 / 4 / 2 / 5;
+        clip-path: polygon(15.05% 0%, 100% 0%, 99.35% 91.7%, 3.08% 108.48%);
+      }
+
+      .four {
+        grid-area: 2 / 1 / 3 / 2;
+        clip-path: polygon(
+          0% -0.85%,
+          106.34% 9.98%,
+          121.32% 65.63%,
+          99.66% 109.89%,
+          1.86% 124.41%
+        );
+
+        img {
+          width: 135%;
+          height: 135%;
+        }
+      }
+
+      .six {
+        grid-area: 3 / 1 / 5 / 2;
+        clip-path: polygon(
+          2.14% 29.3%,
+          99.34% 15.42%,
+          98.14% 100.82%,
+          1.57% 101.2%
+        );
+      }
+
+      .seven {
+        grid-area: 4 / 2 / 5 / 3;
+        clip-path: polygon(
+          7.92% 33.47%,
+          96.31% 23.39%,
+          95.38% 100%,
+          5.3% 100.85%
+        );
+      }
+
+      .eight {
+        grid-area: 4 / 3 / 5 / 5;
+        clip-path: polygon(2.5% 22.35%, 100% 0%, 100% 100%, 1.55% 100%);
+      }
+
+      .nine {
+        grid-area: 3 / 2 / 4 / 4;
+        clip-path: polygon(
+          5.94% 28.66%,
+          100.61% -0.67%,
+          101.1% 108.57%,
+          5.4% 126.28%
+        );
+
+        & img {
+          object-position: 30% 50%;
+          height: 135%;
+        }
+      }
+
+      .five {
+        grid-area: 2 / 2 / 4 / 5;
+        clip-path: polygon(
+          6.4% 6.48%,
+          47.24% 5.89%,
+          100% 0%,
+          98.41% 96.85%,
+          53.37% 100%,
+          53% 63.21%,
+          3.23% 73.02%,
+          14.3% 44.04%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="one">
+        <img src="../assets/img/GTA5-1.jpg" alt="gta5_1" />
+      </div>
+      <div class="two">
+        <img src="../assets/img/GTA5-2.jpg" alt="gta5_2" />
+      </div>
+      <div class="three">
+        <img src="../assets/img/GTA5-3.jpg" alt="gta5_3" />
+      </div>
+      <div class="four">
+        <img src="../assets/img/GTA5-4.jpg" alt="gta5_4" />
+      </div>
+      <div class="six">
+        <img src="../assets/img/GTA5-6.jpeg" alt="gta5_6" />
+      </div>
+      <div class="seven">
+        <img src="../assets/img/GTA5-7.webp" alt="gta5_7" />
+      </div>
+      <div class="eight">
+        <img src="../assets/img/GTA5-8.jpg" alt="gta5_8" />
+      </div>
+      <div class="nine">
+        <img src="../assets/img/GTA5-9.jpg" alt="gta5_9" />
+      </div>
+      <div class="five">
+        <img src="../assets/img/GTA5-5.webp" alt="gta5_5" />
+      </div>
+    </div>
+  </body>
+</html>
